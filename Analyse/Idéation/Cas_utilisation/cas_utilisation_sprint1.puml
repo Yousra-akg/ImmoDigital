@@ -1,0 +1,55 @@
+@startuml ImmoDirect_Sprint1_MVP
+skinparam actorStyle awesome
+left to right direction
+
+skinparam package {
+    BackgroundColor White
+    BorderColor #2C3E50
+}
+
+skinparam usecase {
+    BackgroundColor #FDF2E9
+    BorderColor #A04000
+    ArrowColor #A04000
+}
+
+actor "Utilisateur" as U
+actor "Agent" as Ag
+actor "Administrateur" as Admin
+
+package "ImmoDirect - Sprint 1 (MVP)" {
+
+    usecase "Consulter les offres certifiées" as UC1
+    usecase "Rechercher & Filtrer les offres" as UC2
+    usecase "Voir détails d'une propriété" as UC3
+    usecase "Remplir formulaire de contact" as UC4
+    usecase "Soumettre son bien à la vente" as UC5
+
+    U -- UC1
+    U -- UC2
+    U -- UC3
+    U -- UC4
+    U -- UC5
+
+    usecase "Se connecter (Agent)" as UC6
+    usecase "Consulter la liste globale des leads" as UC7
+    usecase "Voir détails client & bien" as UC8
+    usecase "Mettre à jour l'état du stock" as UC9
+
+    Ag -- UC7
+    Ag -- UC8
+    Ag -- UC9
+    UC7 ..> UC6 : <<include>>
+    UC8 ..> UC6 : <<include>>
+    UC9 ..> UC6 : <<include>>
+
+    usecase "Se connecter (Admin)" as UC10
+    usecase "Gérer le catalogue (CRUD)" as UC11
+    usecase "Consulter l'ensemble des formulaires" as UC12
+
+    Admin -- UC11
+    Admin -- UC12
+    UC11 ..> UC10 : <<include>>
+    UC12 ..> UC10 : <<include>>
+}
+@enduml

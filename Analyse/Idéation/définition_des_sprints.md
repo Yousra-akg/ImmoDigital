@@ -39,6 +39,8 @@ Ce deuxième sprint introduit les fonctionnalités avancées d’ImmoDirect. Il 
 **Utilisateur :**
 * Recevoir une confirmation automatique (réassurance immédiate) après soumission.
 * Interface utilisateur optimisée pour une navigation plus fluide.
+* ajout des biens aux favoris.
+* consulter ses favoris.
 
 **Agent (Responsable Réponses) :**
 * Accéder à son tableau de bord personnel "Mes Missions" (dossiers assignés).
