@@ -1,0 +1,93 @@
+@startuml ImmoDirect_Cas_Utilisation_Global
+skinparam actorStyle awesome
+left to right direction
+
+skinparam package {
+    BackgroundColor White
+    BorderColor #2C3E50
+}
+
+skinparam usecase {
+    BackgroundColor #FDF2E9
+    BorderColor #A04000
+    ArrowColor #A04000
+}
+
+actor "Utilisateur (Public)" as U
+actor "Agent (Responsable Réponses)" as Ag
+actor "Administrateur" as Admin
+
+package "ImmoDirect - Plateforme de Gestion Immobilière" {
+
+    ' ========================
+    ' Espace Utilisateur (Public)
+    ' ========================
+
+    usecase "Consulter les offres certifiées" as UC1
+    usecase "Rechercher & Filtrer les biens" as UC2
+    usecase "Voir détails d'une propriété" as UC3
+    usecase "Manifester un intérêt (Achat/Louer)" as UC4
+    usecase "Soumettre son bien à la vente" as UC5
+    usecase "Ajouter un bien aux favoris" as UC6
+    usecase "Consulter ses favoris" as UC7
+
+    U -- UC1
+    U -- UC2
+    U -- UC3
+    U -- UC4
+    U -- UC5
+    U -- UC6
+    U -- UC7
+
+    ' ========================
+    ' Espace Agent (Responsable Réponses)
+    ' ========================
+
+    usecase "Se connecter (Agent)" as UC8
+    usecase "Consulter la liste des leads" as UC9
+    usecase "Gérer ses missions assignées" as UC10
+    usecase "Gérer le statut des dossiers" as UC19
+    usecase "Mettre à jour l'état du stock" as UC12
+    usecase "Ajouter des notes & historique" as UC13
+
+    Ag -- UC9
+    Ag -- UC10
+    Ag -- UC19
+    Ag -- UC12
+    Ag -- UC13
+
+    UC9 ..> UC8 : <<include>>
+    UC10 ..> UC8 : <<include>>
+    UC12 ..> UC8 : <<include>>
+    UC13 ..> UC8 : <<include>>
+    UC19 ..> UC8 : <<include>>
+    
+
+
+    ' ========================
+    ' Espace Administrateur
+    ' ========================
+
+    usecase "Gérer le catalogue (CRUD)" as UC14
+    usecase "Assigner les formulaires aux agents" as UC15
+    usecase "Valider les propositions de vente" as UC16
+    usecase "Consulter statistiques globales" as UC17
+    usecase "Gérer les comptes agents" as UC18
+    usecase "Se connecter (Admin)" as UC20
+
+
+
+    Admin -- UC14
+    Admin -- UC15
+    Admin -- UC16
+    Admin -- UC17
+    Admin -- UC18
+
+    UC14 ..> UC20 : <<include>>
+    UC15 ..> UC20 : <<include>>
+    UC16 ..> UC20 : <<include>>
+    UC17 ..> UC20 : <<include>>
+    UC18 ..> UC20 : <<include>>
+}
+
+@enduml
