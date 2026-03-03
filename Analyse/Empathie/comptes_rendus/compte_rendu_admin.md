@@ -9,7 +9,7 @@
 
 ## Contexte de l’Entretien
 
-L’objectif de cet entretien est de comprendre comment l’agence gère actuellement ses opérations sans système centralisé. Il s'agit d'identifier les points de blocage dans le suivi des clients et la coordination de l'équipe pour justifier la mise en place de la future plateforme ImmoDirect.
+L’objectif de cet entretien est de comprendre comment l’agence gère actuellement ses opérations sans système centralisé. Il s'agit d'identifier les points de blocage dans le suivi des clients et la coordination de l'équipe.
 
 ---
 
